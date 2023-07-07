@@ -1,5 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Figure S3: Samples belonging to the same stationary period (SP) are assigned the same label.
+% Figure S3: Samples belonging to the same stationary period (SP) are 
+% assigned the same label.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clc;close all;clear;
 addpath('./Callbacks/');
@@ -8,20 +9,16 @@ addpath('./Callbacks/');
 f=figure('units','normalized','position',[0.1094,0.0472,0.8531,0.8574],'MenuBar','none','ToolBar','none','color','w');
 ax={subplot('position',[.03,.86,.96,.12]);subplot('position',[.03,.74,.96,.12]);subplot('position',[.03,.62,.96,.12]);subplot('position',[.03,.50,.96,.12]);subplot('position',[.03,.40,.96,.10]);subplot('position',[.03,.03,.30,.34]);subplot('position',[.36,.03,.30,.34]);subplot('position',[.69,.03,.30,.34])};   
 
+tmp=load('./Data/FigureS3/FigureS3_input');
+seg_t1=tmp.seg_t1;seg_t2=tmp.seg_t2;seg_tc=tmp.seg_tc;
+thr_cp=.3;ss=tmp.ss;S_x=tmp.S_x;S_y=tmp.S_y;S_data=tmp.S_data;
+
 %% qEEG
-segIdx=12193;
-tmp=load('./Data/FigureS3/sampleEEG_spect.mat');
-stimes=tmp.stimes;sfreqs=tmp.sfreqs;sdata=tmp.Sdata;
-w=10*60/2; idx1=segIdx-w/2+1;idx2=idx1+w-1;thr_cp=.3;ss=cell(4,1);
-for i=1:4
-    spec=sdata{i,1}(:,idx1:idx2);
-    ss{i}=spec;
-end
 [icp,P,iscp,iscpc]=fcn_cpd(ss,thr_cp);
-S_x=stimes(idx1:idx2);S_y=sfreqs;col=[-10,25]; colormap jet;spatialRegs={'LL','RL','LP','RP'};
+col=[-10,25];colormap jet;spatialRegs={'LL','RL','LP','RP'};
 for i=1:4
     set(f,'CurrentAxes',ax{i});cla(ax{i})
-    spec=sdata{i,1}(:,idx1:idx2);
+    spec=S_data{i,1};
     imagesc(ax{i},S_x,S_y,pow2db(spec),col);  
     axis(ax{i},'xy'); 
     xx=get(ax{i},'yticklabel');
@@ -31,7 +28,7 @@ for i=1:4
 end
 
 set(f,'CurrentAxes',ax{5});cla(ax{5})
-stimes=stimes(idx1:idx2);tc=length(stimes)/2+1;
+stimes=S_x;tc=length(stimes)/2+1;
 hold(ax{5},'on')
     a=min(P)-5;b=max(P)+1;
     plot(ax{5},stimes,P,'g-','linewidth',2)
@@ -61,12 +58,8 @@ hold(ax{5},'on')
 hold(ax{5},'off')
 
 %% EEG
-idx_L=idx1+icp(10)-1;idx_R=idx1+icp(11)-1;idx_C=round((idx_L+idx_R)/2);
-idx_L=round((idx_L+idx_C)/2);idx_R=round((idx_R+idx_C)/2);
-
-eegFullPath='./Data/FigureS3/sampleEEG.mat';
-fcn_plotEEGseg(f,ax{6},eegFullPath,idx_L,'L-Bipolar',1,'t_1')
-fcn_plotEEGseg(f,ax{7},eegFullPath,idx_C,'L-Bipolar',0,'t_C')
-fcn_plotEEGseg(f,ax{8},eegFullPath,idx_R,'L-Bipolar',0,'t_2')
+fcn_plotEEG(f,ax{6},seg_t1,'L-Bipolar',1,'t_1')
+fcn_plotEEG(f,ax{7},seg_tc,'L-Bipolar',0,'t_C')
+fcn_plotEEG(f,ax{8},seg_t2,'L-Bipolar',0,'t_2')
 
 print(gcf,'-r300','-dpng', './FigS3.png');
