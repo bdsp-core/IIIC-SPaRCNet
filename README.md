@@ -12,15 +12,10 @@ The [supplemental material](IIIC_Classification-Supplemental.pdf)
 
 ### Table 1: Characteristics of patients/EEGs used in training and testing of SzNet.
 ![Table 1](Table1.png)
-Data: 
-Code: 
 
 ### Figure 1: Evaluation of model performance relative to experts: ROC curves
 ![Figure 1](Fig1.png)
 Solid curves are median ROC curves that show model performance; shading indicates 95% confidence bands. Expert operating points (x, y) on the ROC curve are shown as solid circles with (x, y) = (false-positive rate [FPR, aka 1 − specificity], true-positive rate [TPR, aka sensitivity]). Markers are colored in black when they lie above the median ROC curve of the model (better than model performance) and in gray when they lie below (inferior to model performance). EUROC = % of experts under the ROC curve; GPD = generalized periodic discharge; GRDA = generalized rhythmic delta activity; LPD = lateralized periodic discharge; LRDA = lateralized rhythmic delta activity; PPV = positive predicted value; ROC = receiver operating characteristic.
-
-Data: 
-Code: 
 
 ### Figure 2: Evaluation of model performance relative to experts: PR curves
 ![Figure 2](Fig2.png)
@@ -40,6 +35,7 @@ Samples are selected at different levels of model uncertainty ranging from the �
 
 ### Figure 6 Examples of Smooth Pattern Transition for GRDA (A) and “Other” (B) Samples
 ![Figure 6](Fig6.png)
+
 Samples are selected at different levels of model uncertainty ranging from the “starfish” arm tips toward the central area. GRDA = generalized rhythmic delta activity.
 
 ## Figures and Tables from Supplemental Material
@@ -50,13 +46,9 @@ There is no code for this figure.
 
 ### Figure S2. Flow diagram for creation of training and test datasets. 
 ![Figure S2](FigS2.png)
-Data: 
-Code: 
 
 ### Figure S3: Samples belonging to the same stationary period (SP) are assigned the same label. 
-![Figure S3](FigS3.png)
-Data: 
-Code: 
+![Figure S3](FigS3.png) 
 
 ### Figure S4. Architecture of SzNet, based on the Dense-Net CNN architecture.
 ![Figure S4](FigS4.png)
@@ -77,9 +69,6 @@ There is no code for this figure.
 ### Figure S8. Additional performance metrics for SzNet. 
 ![Figure S8](FigS8.png)
 (A) Bar plots showing average inter-rater reliability (IRR) between pairs of experts (ee-pIRR; light red bars) and the average agreement between the algorithm and each expert (ea-pIRR; dark red bars); and average agreement of experts with the label assigned by the majority of other experts (ee-mIRR) and of the algorithm with the majority of experts (ea-mIRR). The differences for each of these pairs is shown in B, with values above 0 indicating better performance for the algorithm (ea>ee), and values below 0 indicating better performance among experts. Confidence intervals are calculated via bootstrapping. The confusion matrices (CM) in subplots C, D, E, F expand on the IRR results, showing not only how well experts and algorithm agree with the label being treated for each analysis as the “correct answer” (numbers along the diagonals), but also showing the distribution of disagreements (values along each row).  
-
-Data: 
-Code: 
 
 ### Table S1. Prior literature in seizures and IIIC patterns detection.
 ![Table S1](TableS1.png)
