@@ -1,0 +1,17 @@
+SpacNet Configure
+
+The steps to run the code are as follows:
+ 
+0. Please install "anaconda3" and open a terminal. Please input the following lines step by step.
+ 
+1. $conda create -n spacnet python=3.6
+ 
+2. $activate spacnet
+ 
+3. $conda install -c conda-forge hdf5storage
+ 
+4. $pip install mne
+ 
+5. $pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+ 
+6. $python runSPaRCNet.py
