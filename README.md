@@ -1,5 +1,5 @@
-# IIIC-IRR
-This repository provides code to reproduce figures in "Interrater Reliability of Expert Electroencephalographers Identifying Seizures and Rhythmic and Periodic Patterns in EEGs". 
+# IIIC-SPaRCNet
+This repository provides code to reproduce figures in "Development of Expert-Level Classification of Seizures and Rhythmic and Periodic Patterns During EEG Interpretation". 
 
 ## References and papers
 Jing J, Ge W, Hong S, Fernandes MB, Lin Z, Yang C, An S, Struck AF, Herlopian A, Karakis I, Halford JJ, Ng MC, Johnson EL, Appavu BL, Sarkis RA, Osman G, Kaplan PW, Dhakar MB, Arcot Jayagopal L, Sheikh Z, Taraschenko O, Schmitt S, Haider HA, Kim JA, Swisher CB, Gaspard N, Cervenka MC, Rodriguez Ruiz AA, Lee JW, Tabaeizadeh M, Gilmore EJ, Nordstrom K, Yoo JY, Holmes MG, Herman ST, Williams JA, Pathmanathan J, Nascimento FA, Fan Z, Nasiri S, Shafi MM, Cash SS, Hoch DB, Cole AJ, Rosenthal ES, Zafar SF, Sun J, Westover MB. **Development of Expert-Level Classification of Seizures and Rhythmic and Periodic Patterns During EEG Interpretation.** *Neurology*. 2023 Apr 25;100(17):e1750-e1762. doi: 10.1212/WNL.0000000000207127. Epub 2023 Mar 6. PMID: 36878708.
