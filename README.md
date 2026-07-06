@@ -8,6 +8,17 @@ The [paper](IIIC_SPaRCNet.pdf)
 The [supplemental material](IIIC_Classification-Supplemental.pdf)
 [Commentary](IIIC_IRR_Commentary.pdf)
 
+## Reproduce (one command)
+Every figure/table regenerates from **committed, de-identified proximal data** in
+`code_for_figures/Data/` — no raw-data download or retraining:
+```matlab
+cd code_for_figures
+run_all
+```
+- **What/where:** [`REPRODUCE.md`](REPRODUCE.md) maps each figure/table → script → input → output.
+- **Raw data & provenance:** [`DATA_SOURCE.md`](DATA_SOURCE.md) — the raw EEG dataset is the credentialed BDSP project [`bdsp-sparcnet`](https://bdsp.io/content/bdsp-sparcnet/) (DOI [10.60508/cw6j-s785](https://doi.org/10.60508/cw6j-s785)); the committed `.mat` are de-identified derived artifacts (surrogate subject IDs).
+- **Requirements:** MATLAB R2019b+, Statistics & ML Toolbox; UMAP File Exchange package for recomputing embeddings (Fig 3/S5).
+
 ## Figures and Tables from Main Text
 
 ### Table 1: Characteristics of patients/EEGs used in training and testing of SzNet.
